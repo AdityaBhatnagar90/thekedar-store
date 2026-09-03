@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            Admin Dashboard
+        </h1>
+
+
+        <button id="logoutButton">
+
+            Logout
+
+        </button>
+
+
+        <a href="suppliers.html">
+
+            <button>
+                Manage Suppliers
+            </button>
+
+        </a>
+
+
+        <div id="dashboardStats">
+
+            <p>
+
+                <strong>
+                    Total Bookings:
+                </strong>
+
+                <span id="totalBookings">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Pending:
+                </strong>
+
+                <span id="pendingBookings">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Confirmed:
+                </strong>
+
+                <span id="confirmedBookings">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Site Visits Done:
+                </strong>
+
+                <span id="siteVisitBookings">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Quote Sent:
+                </strong>
+
+                <span id="quoteBookings">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Completed:
+                </strong>
+
+                <span id="completedBookings">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Cancelled:
+                </strong>
+
+                <span id="cancelledBookings">
+                    0
+                </span>
+
+            </p>
+
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <label for="sourceFilter">
+
+            Filter by Source
+
+        </label>
+
+
+        <select id="sourceFilter">
+
+            <option value="">
+                All Bookings
+            </option>
+
+        </select>
+
+
+        <br>
+        <br>
+
+
+        <div class="table-wrapper">
+
+            <table border="1" width="100%">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Phone
+                        </th>
+
+                        <th>
+                            Service
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Source
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="bookingTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

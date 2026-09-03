@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Book Inspection | Thekedar Store</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Book Inspection</h1>
+
+
+    <button id="logoutButton">
+
+        Logout
+
+    </button>
+
+
+    <br>
+    <br>
+
+
+    <form id="bookingForm">
+
+
+        <!-- NAME -->
+
+        <label for="name">
+            Name
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter Your Name"
+            required
+        >
+
+
+        <!-- PHONE -->
+
+        <label for="phone">
+            Phone
+        </label>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Enter 10-digit Phone Number"
+            inputmode="numeric"
+            maxlength="10"
+            required
+        >
+
+
+        <!-- ADDRESS -->
+
+        <label for="address">
+            Full Address
+        </label>
+
+        <textarea
+            id="address"
+            rows="3"
+            placeholder="House No., Street, Locality, Landmark, Bhopal"
+            required
+        ></textarea>
+
+
+        <!-- SERVICE -->
+
+        <label for="service">
+            Service
+        </label>
+
+        <select
+            id="service"
+            required
+        >
+
+            <option value="">
+                Select Service
+            </option>
+
+            <option value="Damp Proofing">
+                Damp Proofing
+            </option>
+
+            <option value="Waterproofing">
+                Waterproofing
+            </option>
+
+            <option value="Painting">
+                Painting
+            </option>
+
+            <option value="Crack Repair">
+                Crack Repair
+            </option>
+
+        </select>
+
+
+        <!-- DATE -->
+
+        <label for="date">
+            Preferred Date
+        </label>
+
+        <input
+            type="date"
+            id="date"
+            required
+        >
+
+
+        <!-- TIME -->
+
+        <label for="time">
+            Preferred Time
+        </label>
+
+        <select
+            id="time"
+            required
+        >
+
+            <option value="">
+                Select Time
+            </option>
+
+            <option value="09:00">
+                9:00 AM
+            </option>
+
+            <option value="09:30">
+                9:30 AM
+            </option>
+
+            <option value="10:00">
+                10:00 AM
+            </option>
+
+            <option value="10:30">
+                10:30 AM
+            </option>
+
+            <option value="11:00">
+                11:00 AM
+            </option>
+
+            <option value="11:30">
+                11:30 AM
+            </option>
+
+            <option value="12:00">
+                12:00 PM
+            </option>
+
+            <option value="12:30">
+                12:30 PM
+            </option>
+
+            <option value="13:00">
+                1:00 PM
+            </option>
+
+            <option value="13:30">
+                1:30 PM
+            </option>
+
+            <option value="14:00">
+                2:00 PM
+            </option>
+
+            <option value="14:30">
+                2:30 PM
+            </option>
+
+            <option value="15:00">
+                3:00 PM
+            </option>
+
+            <option value="15:30">
+                3:30 PM
+            </option>
+
+            <option value="16:00">
+                4:00 PM
+            </option>
+
+        </select>
+
+
+        <!-- NOTES -->
+
+        <label for="notes">
+            Problem Description
+        </label>
+
+        <textarea
+            id="notes"
+            rows="4"
+            placeholder="Describe the issue..."
+        ></textarea>
+
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            id="submitBookingButton"
+        >
+
+            Book Inspection
+
+        </button>
+
+
+    </form>
+
+
+</div>
+
+
+<script src="js/source.js"></script>
+<script src="js/booking.js"></script>
+
+</body>
+
+</html>

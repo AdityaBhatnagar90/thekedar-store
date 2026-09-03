@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Supplier Details</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Supplier Details</h1>
+
+        <form id="supplierForm">
+
+            <label>Supplier Code</label>
+
+            <input
+                type="text"
+                id="supplierCode"
+                readonly
+            >
+
+            <label>Supplier Booking Link</label>
+
+            <input
+                type="text"
+                id="supplierBookingLink"
+                readonly
+            >
+
+            <br>
+
+            <button
+                type="button"
+                id="copyBookingLinkButton"
+            >
+                Copy Booking Link
+            </button>
+
+            <br>
+            <br>
+
+            <button
+                type="button"
+                id="shareWhatsAppButton"
+            >
+                Share on WhatsApp
+            </button>
+
+            <br>
+            <br>
+
+            <label>Supplier Name</label>
+
+            <input
+                type="text"
+                id="supplierName"
+                placeholder="Enter supplier name"
+            >
+
+            <label>Phone</label>
+
+            <input
+                type="text"
+                id="phone"
+                placeholder="Enter phone number"
+            >
+
+            <label>Area</label>
+
+            <input
+                type="text"
+                id="area"
+                placeholder="Enter area"
+            >
+
+            <label>Address</label>
+
+            <textarea
+                id="address"
+                placeholder="Enter supplier address"
+            ></textarea>
+
+            <label>Status</label>
+
+            <select id="status">
+
+                <option value="UNASSIGNED">
+                    UNASSIGNED
+                </option>
+
+                <option value="ACTIVE">
+                    ACTIVE
+                </option>
+
+                <option value="INACTIVE">
+                    INACTIVE
+                </option>
+
+            </select>
+
+            <br>
+            <br>
+
+            <button type="submit">
+                Save Supplier
+            </button>
+
+        </form>
+
+        <br>
+
+        <hr>
+
+        <h2>Supplier Performance</h2>
+
+        <p>
+
+            Bookings Generated:
+
+            <strong id="bookingCount">
+                0
+            </strong>
+
+        </p>
+
+        <br>
+
+        <button id="viewBookingsButton">
+            View Supplier Bookings
+        </button>
+
+        <br>
+        <br>
+
+        <button id="backButton">
+            Back to Suppliers
+        </button>
+
+        <br>
+        <br>
+
+        <button id="logoutButton">
+            Logout
+        </button>
+
+    </div>
+
+    <script src="js/supplier-details.js"></script>
+
+</body>
+
+</html>
