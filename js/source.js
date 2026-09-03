@@ -61,7 +61,7 @@ async function findSupplierByLocation() {
                 const response =
                     await fetch(
 
-                        "http://localhost:3000/api/suppliers/nearest",
+                        "https://api.thekedar.store/api/suppliers/nearest",
 
                         {
 

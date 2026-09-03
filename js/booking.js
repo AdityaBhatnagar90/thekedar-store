@@ -130,7 +130,7 @@ form.addEventListener(
             const response =
                 await fetch(
 
-                    "http://localhost:3000/api/booking",
+                    "https://api.thekedar.store/api/booking",
 
                     {
 
