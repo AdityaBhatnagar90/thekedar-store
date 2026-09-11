@@ -16,7 +16,7 @@ form.addEventListener("submit", async function (e) {
 
         const response = await fetch(
 
-            "http://localhost:3000/api/admin/login",
+            "https://api.thekedar.store/api/admin/login",
 
             {
 
