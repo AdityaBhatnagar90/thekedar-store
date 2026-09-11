@@ -114,7 +114,7 @@ async function signup() {
 
         const response = await fetch(
 
-            "http://localhost:3000/api/signup",
+            "https://api.thekedar.store/api/signup",
 
             {
 
@@ -217,7 +217,7 @@ async function login() {
 
         const response = await fetch(
 
-            "http://localhost:3000/api/login",
+            "https://api.thekedar.store/api/login",
 
             {
 
