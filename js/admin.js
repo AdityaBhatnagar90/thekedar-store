@@ -39,7 +39,7 @@ async function loadBookings() {
 
         const response = await fetch(
 
-            "http://localhost:3000/api/bookings",
+            "https://api.thekedar.store/api/bookings",
 
             {
 
