@@ -27,7 +27,7 @@ async function loadSuppliers() {
         const response =
             await fetch(
 
-                "http://localhost:3000/api/suppliers",
+                "https://api.thekedar.store/api/suppliers",
 
                 {
 
@@ -203,7 +203,7 @@ if (createSupplierForm) {
                 const response =
                     await fetch(
 
-                        "http://localhost:3000/api/suppliers",
+                        "https://api.thekedar.store/api/suppliers",
 
                         {
 
