@@ -36,7 +36,7 @@ async function loadBooking() {
 
         const response = await fetch(
 
-            `http://localhost:3000/api/booking/${bookingId}`,
+            `https://api.thekedar.store/api/booking/${bookingId}`,
 
             {
 
@@ -126,7 +126,7 @@ async function saveStatus() {
 
         const response = await fetch(
 
-            `http://localhost:3000/api/booking/${bookingId}/status`,
+            `https://api.thekedar.store/api/booking/${bookingId}/status`,
 
             {
 
