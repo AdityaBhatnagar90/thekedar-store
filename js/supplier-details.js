@@ -49,7 +49,7 @@ async function loadSupplier() {
         const response =
             await fetch(
 
-                "http://localhost:3000/api/suppliers/"
+                "https://api.thekedar.store/api/suppliers/"
                 + supplierCode,
 
                 {
@@ -211,7 +211,7 @@ form.addEventListener(
             const response =
                 await fetch(
 
-                    "http://localhost:3000/api/suppliers/"
+                    "https://api.thekedar.store/api/suppliers/"
                     + supplierCode,
 
                     {
@@ -366,7 +366,7 @@ async function loadSupplierBookings() {
         const response =
             await fetch(
 
-                "http://localhost:3000/api/bookings",
+                "https://api.thekedar.store/api/bookings",
 
                 {
 
