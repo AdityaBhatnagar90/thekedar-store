@@ -16,6 +16,8 @@ if (!admin || !token) {
     window.location.href =
         "admin-login.html";
 
+    return;
+
 }
 
 
@@ -37,7 +39,15 @@ if (!supplierCode) {
     window.location.href =
         "suppliers.html";
 
+    return;
+
 }
+
+
+/* API BASE URL */
+
+const API_BASE_URL =
+    "https://api.thekedar.store";
 
 
 /* LOAD SUPPLIER */
@@ -49,8 +59,11 @@ async function loadSupplier() {
         const response =
             await fetch(
 
-                "https://api.thekedar.store/api/suppliers/"
-                + supplierCode,
+                API_BASE_URL +
+                "/api/suppliers/" +
+                encodeURIComponent(
+                    supplierCode
+                ),
 
                 {
 
@@ -104,17 +117,20 @@ async function loadSupplier() {
         ).value =
             supplier.supplier_code;
 
-            const bookingLink =
-    "https://www.thekedar.store/?source="
-    + encodeURIComponent(
-        supplier.supplier_code
-    );
+
+        /* SUPPLIER BOOKING LINK */
+
+        const bookingLink =
+            "https://www.thekedar.store/?source=" +
+            encodeURIComponent(
+                supplier.supplier_code
+            );
 
 
-document.getElementById(
-    "supplierBookingLink"
-).value =
-    bookingLink;
+        document.getElementById(
+            "supplierBookingLink"
+        ).value =
+            bookingLink;
 
 
         document.getElementById(
@@ -144,7 +160,7 @@ document.getElementById(
         document.getElementById(
             "status"
         ).value =
-            supplier.status || "UNASSIGNED";
+            supplier.status || "ACTIVE";
 
     }
 
@@ -211,8 +227,11 @@ form.addEventListener(
             const response =
                 await fetch(
 
-                    "https://api.thekedar.store/api/suppliers/"
-                    + supplierCode,
+                    API_BASE_URL +
+                    "/api/suppliers/" +
+                    encodeURIComponent(
+                        supplierCode
+                    ),
 
                     {
 
@@ -311,7 +330,6 @@ document.getElementById(
 );
 
 
-
 /* VIEW SUPPLIER BOOKINGS */
 
 const viewBookingsButton =
@@ -337,6 +355,7 @@ if (viewBookingsButton) {
 
 }
 
+
 /* LOGOUT */
 
 document.getElementById(
@@ -359,6 +378,9 @@ document.getElementById(
     }
 );
 
+
+/* LOAD SUPPLIER BOOKINGS */
+
 async function loadSupplierBookings() {
 
     try {
@@ -366,7 +388,8 @@ async function loadSupplierBookings() {
         const response =
             await fetch(
 
-                "https://api.thekedar.store/api/bookings",
+                API_BASE_URL +
+                "/api/bookings",
 
                 {
 
@@ -380,6 +403,24 @@ async function loadSupplierBookings() {
                 }
 
             );
+
+
+        if (response.status === 401) {
+
+            sessionStorage.removeItem(
+                "admin"
+            );
+
+            sessionStorage.removeItem(
+                "adminToken"
+            );
+
+            window.location.href =
+                "admin-login.html";
+
+            return;
+
+        }
 
 
         if (!response.ok) {
@@ -420,6 +461,9 @@ async function loadSupplierBookings() {
     }
 
 }
+
+
+/* COPY BOOKING LINK */
 
 const copyBookingLinkButton =
     document.getElementById(
@@ -467,6 +511,9 @@ if (copyBookingLinkButton) {
 
 }
 
+
+/* SHARE ON WHATSAPP */
+
 const shareWhatsAppButton =
     document.getElementById(
         "shareWhatsAppButton"
@@ -486,16 +533,13 @@ if (shareWhatsAppButton) {
 
 
             const message =
-                "Here is your The Thekedar Store booking link. "
-                +
-                "Please share this link with customers:\n\n"
-                +
+                "Here is your The Thekedar Store booking link. " +
+                "Please share this link with customers:\n\n" +
                 bookingLink;
 
 
             const whatsappURL =
-                "https://wa.me/?text="
-                +
+                "https://wa.me/?text=" +
                 encodeURIComponent(
                     message
                 );
@@ -510,6 +554,7 @@ if (shareWhatsAppButton) {
     );
 
 }
+
 
 /* INITIAL LOAD */
 
