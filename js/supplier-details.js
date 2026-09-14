@@ -105,7 +105,7 @@ async function loadSupplier() {
             supplier.supplier_code;
 
             const bookingLink =
-    "http://127.0.0.1:5500/client/index.html?source="
+    "https://www.thekedar.store/?source="
     + encodeURIComponent(
         supplier.supplier_code
     );
