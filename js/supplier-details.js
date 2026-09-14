@@ -1,6 +1,8 @@
 const admin =
     JSON.parse(
-        sessionStorage.getItem("admin")
+        sessionStorage.getItem(
+            "admin"
+        )
     );
 
 const token =
@@ -15,8 +17,6 @@ if (!admin || !token) {
 
     window.location.href =
         "admin-login.html";
-
-    return;
 
 }
 
@@ -34,12 +34,12 @@ const supplierCode =
 
 if (!supplierCode) {
 
-    alert("Supplier code missing");
+    alert(
+        "Supplier code missing"
+    );
 
     window.location.href =
         "suppliers.html";
-
-    return;
 
 }
 
@@ -70,7 +70,8 @@ async function loadSupplier() {
                     headers: {
 
                         "Authorization":
-                            "Bearer " + token
+                            "Bearer " +
+                            token
 
                     }
 
@@ -79,7 +80,12 @@ async function loadSupplier() {
             );
 
 
-        if (response.status === 401) {
+        /* ADMIN SESSION EXPIRED */
+
+        if (
+            response.status ===
+            401
+        ) {
 
             sessionStorage.removeItem(
                 "admin"
@@ -112,6 +118,8 @@ async function loadSupplier() {
             await response.json();
 
 
+        /* SUPPLIER CODE */
+
         document.getElementById(
             "supplierCode"
         ).value =
@@ -133,40 +141,57 @@ async function loadSupplier() {
             bookingLink;
 
 
+        /* SUPPLIER NAME */
+
         document.getElementById(
             "supplierName"
         ).value =
-            supplier.supplier_name || "";
+            supplier.supplier_name ||
+            "";
 
+
+        /* PHONE */
 
         document.getElementById(
             "phone"
         ).value =
-            supplier.phone || "";
+            supplier.phone ||
+            "";
 
+
+        /* AREA */
 
         document.getElementById(
             "area"
         ).value =
-            supplier.area || "";
+            supplier.area ||
+            "";
 
+
+        /* ADDRESS */
 
         document.getElementById(
             "address"
         ).value =
-            supplier.address || "";
+            supplier.address ||
+            "";
 
+
+        /* STATUS */
 
         document.getElementById(
             "status"
         ).value =
-            supplier.status || "ACTIVE";
+            supplier.status ||
+            "ACTIVE";
 
     }
 
     catch (error) {
 
-        console.log(error);
+        console.log(
+            error
+        );
 
         alert(
             "Unable to load supplier"
@@ -235,7 +260,8 @@ form.addEventListener(
 
                     {
 
-                        method: "PATCH",
+                        method:
+                            "PATCH",
 
                         headers: {
 
@@ -243,7 +269,8 @@ form.addEventListener(
                                 "application/json",
 
                             "Authorization":
-                                "Bearer " + token
+                                "Bearer " +
+                                token
 
                         },
 
@@ -261,7 +288,12 @@ form.addEventListener(
                 await response.json();
 
 
-            if (response.status === 401) {
+            /* ADMIN SESSION EXPIRED */
+
+            if (
+                response.status ===
+                401
+            ) {
 
                 sessionStorage.removeItem(
                     "admin"
@@ -279,6 +311,8 @@ form.addEventListener(
             }
 
 
+            /* SUCCESS */
+
             if (response.ok) {
 
                 alert(
@@ -292,6 +326,8 @@ form.addEventListener(
             }
 
 
+            /* ERROR */
+
             alert(
 
                 data.message ||
@@ -303,7 +339,9 @@ form.addEventListener(
 
         catch (error) {
 
-            console.log(error);
+            console.log(
+                error
+            );
 
             alert(
                 "Server Error"
@@ -396,7 +434,8 @@ async function loadSupplierBookings() {
                     headers: {
 
                         "Authorization":
-                            "Bearer " + token
+                            "Bearer " +
+                            token
 
                     }
 
@@ -405,7 +444,12 @@ async function loadSupplierBookings() {
             );
 
 
-        if (response.status === 401) {
+        /* ADMIN SESSION EXPIRED */
+
+        if (
+            response.status ===
+            401
+        ) {
 
             sessionStorage.removeItem(
                 "admin"
@@ -434,6 +478,9 @@ async function loadSupplierBookings() {
             await response.json();
 
 
+        /* FILTER BOOKINGS
+           BELONGING TO THIS SUPPLIER */
+
         const supplierBookings =
             bookings.filter(
                 function (booking) {
@@ -456,7 +503,9 @@ async function loadSupplierBookings() {
 
     catch (error) {
 
-        console.log(error);
+        console.log(
+            error
+        );
 
     }
 
@@ -498,7 +547,9 @@ if (copyBookingLinkButton) {
 
             catch (error) {
 
-                console.log(error);
+                console.log(
+                    error
+                );
 
                 alert(
                     "Unable to copy booking link"
